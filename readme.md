@@ -41,9 +41,9 @@ user:path$ ./pDCI m L nc
 where `m L nc` are integers. `m` is the number of simple indices for each composite index. `L` is the number of composite indices. `nc` is the number of candidates for the query step. Some recommended parameter settings for GNO-IMI are as follows:
 
 ```bash
+user:path$ ./pDCI 5 20 100
 user:path$ ./pDCI 5 20 3125
 user:path$ ./pDCI 5 20 12500
-user:path$ ./pDCI 5 20 50000
 ```
 
 Note that the codes are all running on the specific datasets, which are mentioned in the dissertation. These datasets locate at the `data/` directory.
