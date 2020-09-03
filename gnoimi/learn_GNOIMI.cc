@@ -532,7 +532,7 @@ int main(int argc, char **argv) {
 	int index_L = atoi(argv[2]), coarse_L = atoi(argv[2]), fine_L = atoi(argv[3]), topK = 25;
 
 	std::cout << "parameters: " << K << " " << index_L << " " << fine_L << std::endl;
-	std::ofstream record("record", std::fstream::app);
+	std::ofstream record("gnoimi_record", std::fstream::app);
 	record << K << " " << index_L << " " << fine_L << " ";
 
 	learn_gnoimi::IndexGNOIMI index(dimension, K);

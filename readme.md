@@ -8,25 +8,42 @@ This repository is the implementation and experiment codes of my master project 
 Apart from these files/directories, other files/directories in this repository are:
 
 - `data/`: the directory containing the datasets used in this project.
-- `dumps/`: An empty directory. Prepared for dumps of kNN/ANN models.
 - `lib/`: third-party libraries used by the implementation.
 
-For the `pDCI/` and `gnoimi/`, `make.sh` shows the compile parameters for corresponding C++ codes.
+To initialize datasets and compile C++ programs, run `init.sh`:
+
+```bash
+user:path$ ./init.sh
+```
+
+The compiled binary files are at `./bin`.
 
 The command line arguments for GNO-IMI are as follows:
 
 ```bash
-user:path$ ./learn_GNOIMI K index_L fine_L
+user:path$ ./GNOIMI K index_L fine_L
 ```
 
-where `K index_L fine_L` are integers. `K` is the number of first-order and second-order centroids, `index_L` is the `L` parameter for the indexing step, `fine_L` is the number of second-order centroids considered at the query step, which are all mentioned in the original paper.
+where `K index_L fine_L` are integers. `K` is the number of first-order and second-order centroids, `index_L` is the `L` parameter for the indexing step, `fine_L` is the number of second-order centroids considered at the query step, which are all mentioned in the original paper. Some recommended parameter settings for GNO-IMI are as follows:
+
+```bash
+user:path$ ./GNOIMI 16 4 1
+user:path$ ./GNOIMI 16 2 2
+user:path$ ./GNOIMI 8 2 16
+```
 
 The command line arguments for pDCI are as follows:
 
 ```bash
-user:path$ ./main m L nc
+user:path$ ./pDCI m L nc
 ```
 
-where `m L nc` are integers. `m` is the number of simple indices for each composite index. `L` is the number of composite indices. `nc` is the number of candidates for the query step.
+where `m L nc` are integers. `m` is the number of simple indices for each composite index. `L` is the number of composite indices. `nc` is the number of candidates for the query step. Some recommended parameter settings for GNO-IMI are as follows:
+
+```bash
+user:path$ ./pDCI 5 20 3125
+user:path$ ./pDCI 5 20 12500
+user:path$ ./pDCI 5 20 50000
+```
 
 Note that the codes are all running on the specific datasets, which are mentioned in the dissertation. These datasets locate at the `data/` directory.

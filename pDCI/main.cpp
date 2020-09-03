@@ -40,7 +40,7 @@ pair<double, double> test_2t(int d, int n, int m, int L, int k, int nc,
   fvecs_read("../data/bert_base_binary", d, n, bases.data());
   fvecs_read("../data/bert_base_query_small_binary", d, query_num, queries.data());
 
-  std::ofstream f("record", std::fstream::app);
+  std::ofstream f("pdci_record", std::fstream::app);
   f << m << " " << L << " " << nc << " ";
 
   pDCI::Dataset dataset;
